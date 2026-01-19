@@ -1,0 +1,19 @@
+.songcard{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.189);
+}
+
+h2.songtitle{
+    font-size: 1rem;
+}
+
+.songcard.active_song {
+  background: linear-gradient(135deg, #000000, #2b303a);
+  color: white;
+  /* transform: scale(1.02); */
+  /* box-shadow: 0 0 15px rgba(106,17,203,0.6); */
+}
