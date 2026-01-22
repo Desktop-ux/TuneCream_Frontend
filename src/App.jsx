@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./App.css"
 import Moods from './Components/Moods/Moods'
 import Player from './Components/Player/Player'
@@ -9,6 +9,30 @@ const App = () => {
   const [songs, setSongs] = useState([])
   const [selectedMood, setSelectedMood] = useState("");
   const [currentSong, setCurrentSong] = useState(null)
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  const shuffleArray = (array) => {
+    const shuffled = [...array]
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1))
+        ;[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
+    }
+    return shuffled
+  }
+
+
+
+  useEffect(() => {
+    if (songs.length > 0) {
+      setCurrentIndex(0)
+      setCurrentSong(songs[0])
+    }
+  }, [songs])
+
+  const handleSongSelect = (song, index) => {
+    setCurrentSong(song)
+    setCurrentIndex(index)
+  }
 
   const handleMoodSelect = async (mood) => {
     setSelectedMood(mood);
@@ -18,8 +42,14 @@ const App = () => {
         `http://localhost:5000/songs?mood=${mood}`
       );
 
-      console.log(res.data); 
-       setSongs(Array.isArray(res.data) ? res.data : res.data.songs || []);   
+      console.log(res.data);
+      const songsData = Array.isArray(res.data)
+        ? res.data
+        : res.data.songs || []
+
+      setSongs(shuffleArray(songsData))
+
+      console.log(songs.length)
 
     } catch (err) {
       console.log("Error fetching songs", err);
@@ -33,11 +63,11 @@ const App = () => {
         <p>Music Therapy</p>
       </div>
       <div className="line"></div>
-      <Moods onMoodSelect={handleMoodSelect}/>
+      <Moods onMoodSelect={handleMoodSelect} />
       <div className="line"></div>
-      <Player currentSong ={currentSong} playlist={songs} setCurrentSong={setCurrentSong}/>
+      <Player currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} currentSong={currentSong} playlist={songs} setCurrentSong={setCurrentSong} />
       <div className="line"></div>
-      <Recommended currentSong ={currentSong} songs={songs} onSongSelect = {setCurrentSong} mood={selectedMood}/>
+      <Recommended currentIndex={currentIndex} currentSong={currentSong} songs={songs} onSongSelect={handleSongSelect} mood={selectedMood} />
     </div>
   )
 }

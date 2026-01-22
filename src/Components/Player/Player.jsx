@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import "./Player.css"
 import ShinyText from '../ShinyText/ShinyText'
 
-const Player = ({ currentSong , playlist , setCurrentSong}) => {
+const Player = ({ currentSong, playlist, setCurrentSong, currentIndex, setCurrentIndex }) => {
     const audioRef = useRef(null)
     const progressRef = useRef(null)
     const [isPlaying, setIsPlaying] = useState(false)
@@ -54,18 +54,31 @@ const Player = ({ currentSong , playlist , setCurrentSong}) => {
     }
 
     const playNext = () => {
-        const index = playlist.findIndex(song => song.id === currentSong.id)
-        if (index < playlist.length - 1) {
-            setCurrentSong(playlist[index + 1])
-        }
+  setCurrentIndex(prevIndex => {
+    if (prevIndex < playlist.length - 1) {
+      const nextIndex = prevIndex + 1
+      setCurrentSong(playlist[nextIndex])
+      return nextIndex
     }
+    return prevIndex
+  })
+}
 
-    const playPrev = () => {
-        const index = playlist.findIndex(song => song.id === currentSong.id)
-        if (index > 0) {
-            setCurrentSong(playlist[index - 1])
-        }
+
+  const playPrev = () => {
+  setCurrentIndex(prevIndex => {
+    if (prevIndex > 0) {
+      const prev = prevIndex - 1
+      setCurrentSong(playlist[prev])
+      return prev
     }
+    return prevIndex
+  })
+}
+
+
+  
+
 
     if (!currentSong) {
         return (
@@ -78,7 +91,7 @@ const Player = ({ currentSong , playlist , setCurrentSong}) => {
         )
     }
 
-     const progressPercent = duration ? (currentTime / duration) * 100 : 0
+    const progressPercent = duration ? (currentTime / duration) * 100 : 0
 
 
     return (
