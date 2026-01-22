@@ -39,8 +39,7 @@ const App = () => {
 
     try {
       const res = await axios.get(
-        `https://tunecream-backend.onrender.com/api/songs?mood=happy
-/songs?mood=${mood}`
+        `https://tunecream-backend.onrender.com/api/songs?mood=${mood}`
       );
 
       console.log(res.data);
