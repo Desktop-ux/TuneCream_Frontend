@@ -12,8 +12,8 @@ h2.songtitle{
 }
 
 .songcard.active_song {
-  background: linear-gradient(135deg, #000000, #2b303a);
-  color: white;
+  background: linear-gradient(135deg, var(--bg), var(--bg));
+  color: var(--text);
   /* transform: scale(1.02); */
   /* box-shadow: 0 0 15px rgba(106,17,203,0.6); */
 }

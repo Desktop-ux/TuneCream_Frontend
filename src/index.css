@@ -1,9 +1,33 @@
 
+:root {
+  --bg: #0f172a;
+  --text: #e5e7eb;
+  --card: #1e293b;
+  --btn : #4900b0;
+  --app-bg: url("./assets/moddy_bg_dark.png");
+}
+/* [data-theme="dark"] {
+  --bg: #0f172a;
+  --text: #e5e7eb;
+  --card: #1e293b;
+  --btn : #4900b0;
+  --app-bg: url("./assets/moddy_bg_dark.png");
+} */
+[data-theme="dark"] {
+ --bg: #ffffff;
+  --text: #111111;
+  --card: #f3f4f6;
+  --btn : #e5bdf1;
+  --app-bg: url("./assets/moody_bg.png");
+}
+
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: poppins;
+   transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 html, body{

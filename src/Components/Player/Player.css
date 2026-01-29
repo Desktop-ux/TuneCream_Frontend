@@ -10,7 +10,7 @@
     width: 100%;
     border-radius: 1rem;
     padding: 1rem 0;
-    box-shadow: 0 0 5px black;
+    box-shadow: 0 0 5px var(--text);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -62,7 +62,7 @@ h3.artist{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(219, 219, 219);
+    background-color: var(--bg);
 }
 
 .play{

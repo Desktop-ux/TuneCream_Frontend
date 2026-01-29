@@ -11,6 +11,24 @@ const App = () => {
   const [currentSong, setCurrentSong] = useState(null)
   const [currentIndex, setCurrentIndex] = useState(0)
 
+    const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) setTheme(savedTheme);
+  }, []);
+
+  
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => (prev === "light" ? "dark" : "light"));
+  };
+
+
   const shuffleArray = (array) => {
     const shuffled = [...array]
     for (let i = shuffled.length - 1; i > 0; i--) {
@@ -19,8 +37,6 @@ const App = () => {
     }
     return shuffled
   }
-
-
 
   useEffect(() => {
     if (songs.length > 0) {
@@ -63,7 +79,7 @@ const App = () => {
           <h1>TuneCream</h1>
           <p>Music Therapy</p>
         </div>
-        <div className="tuneCream_logo"></div>
+        <div onClick={toggleTheme} className="tuneCream_logo"></div>
       </div>
       <div className="line"></div>
       <Moods selectedMood={selectedMood} onMoodSelect={handleMoodSelect} />
