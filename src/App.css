@@ -5,8 +5,10 @@
   padding: 1rem 2rem;
   /* background: white; */
   background-image: url(./assets/moody_bg.png);
+  /* background-color: black; */
   background-position: center;
   background-size: cover;
+  background-clip: border-box;
   color: black;
   display: flex;
   flex-direction: column;
@@ -19,15 +21,20 @@
 .app_head {
   width: 100%;
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.app_headers{
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
-
-.app_head h1 {
+.app_headers h1 {
   font-size: 2rem;
   font-weight: 800;
 }
-.app_head p {
+.app_headers p {
   font-size: 1rem;
   font-weight: 500;
 }
@@ -37,4 +44,26 @@
   height: 1px;
   /* background: linear-gradient(90deg,rgba(0, 0, 64, 1) 0%, rgba(48, 59, 133, 1) 52%, rgba(16, 4, 59, 1) 100%); */
   background: black;
+}
+
+.tuneCream_logo{
+  width: 3rem;
+  height: 3rem;
+  border-radius: 1rem;
+  background: url(./assets/tunecream_logo.png);
+  background-size: cover;
+  background-position: center;
+  animation: softGlow 2s infinite ease-in-out;
+}
+
+@keyframes softGlow {
+  0% {
+    box-shadow: 0 0 7px rgb(56, 191, 248);
+  }
+  50% {
+    box-shadow: 0 0 12px rgba(142, 56, 248, 0.986);
+  }
+  100% {
+    box-shadow: 0 0 7px rgb(91, 56, 248);
+  }
 }

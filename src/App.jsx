@@ -48,7 +48,7 @@ const App = () => {
         : res.data.songs || []
 
       setSongs(shuffleArray(songsData))
- 
+
       console.log(songs.length)
 
     } catch (err) {
@@ -59,11 +59,14 @@ const App = () => {
   return (
     <div className='app_container'>
       <div className="app_head">
-        <h1>TuneCream</h1>
-        <p>Music Therapy</p>
+        <div className="app_headers">
+          <h1>TuneCream</h1>
+          <p>Music Therapy</p>
+        </div>
+        <div className="tuneCream_logo"></div>
       </div>
       <div className="line"></div>
-      <Moods selectedMood = {selectedMood} onMoodSelect={handleMoodSelect} />
+      <Moods selectedMood={selectedMood} onMoodSelect={handleMoodSelect} />
       <div className="line"></div>
       <Player currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} currentSong={currentSong} playlist={songs} setCurrentSong={setCurrentSong} />
       <div className="line"></div>
