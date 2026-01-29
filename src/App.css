@@ -69,3 +69,27 @@
     box-shadow: 0 0 7px rgb(91, 56, 248);
   }
 }
+
+
+
+/* Tablets */
+@media (min-width: 768px) {
+  .app_container{
+    padding: 1.5rem 2rem;
+  }
+  .app_head{
+    padding: 1rem;
+  }
+  .tuneCream_logo{
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+/* Laptops */
+@media (min-width: 1024px) {
+  
+}
+
+/* Desktops */
+@media (min-width: 1280px) {}

@@ -1,14 +1,15 @@
-.songcard{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.5rem;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.189);
+.songcard {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.189);
+  gap: 0.5rem;
 }
 
-h2.songtitle{
-    font-size: 1rem;
+h2.songtitle {
+  font-size: 1rem;
 }
 
 .songcard.active_song {
@@ -16,4 +17,24 @@ h2.songtitle{
   color: var(--text);
   /* transform: scale(1.02); */
   /* box-shadow: 0 0 15px rgba(106,17,203,0.6); */
+}
+
+/* Tablets */
+@media (min-width: 768px) {
+  .songcard {
+    gap: 0.75rem;
+    padding: 0.75rem;
+  }
+
+  h2.songtitle {
+    font-size: 1.25rem;
+  }
+}
+
+/* Laptops */
+@media (min-width: 1024px) {
+}
+
+/* Desktops */
+@media (min-width: 1280px) {
 }

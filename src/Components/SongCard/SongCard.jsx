@@ -4,7 +4,7 @@ import './SongCard.css'
 const SongCard = forwardRef(({ song, onClick, isActive }, ref) => {
   return (
     <div
-      ref={ref}   // 👈 THIS IS REQUIRED
+      ref={ref}  
       className={`songcard ${isActive ? "active_song" : ""}`}
       onClick={onClick}
     >

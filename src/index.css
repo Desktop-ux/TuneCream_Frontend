@@ -3,7 +3,8 @@
   --bg: #0f172a;
   --text: #e5e7eb;
   --card: #1e293b;
-  --btn : #4900b0;
+  --btn : #2c026e;
+  --btn_active :#4700c1;
   --app-bg: url("./assets/moddy_bg_dark.png");
 }
 /* [data-theme="dark"] {
@@ -17,7 +18,8 @@
  --bg: #ffffff;
   --text: #111111;
   --card: #f3f4f6;
-  --btn : #e5bdf1;
+  --btn : #cbcbcb;
+  --btn_active :#2380f1;
   --app-bg: url("./assets/moody_bg.png");
 }
 

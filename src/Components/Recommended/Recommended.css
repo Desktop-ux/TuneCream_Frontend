@@ -15,7 +15,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+
   gap: 1rem;
   margin-top: 0.85rem;
   flex: 1;
@@ -27,4 +27,32 @@
   width: 100%;
   margin-bottom: 0.5rem;
   border-radius: 1rem;
+}
+
+/* Tablets */
+@media (min-width: 768px) {
+  .recommended_container {
+    padding: 1rem;
+  }
+  .recommended_container p {
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+
+  .list {
+    gap: 1.5rem;
+    margin-top: 0.85rem;
+    flex: 1;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    font-weight: 300;
+  }
+}
+
+/* Laptops */
+@media (min-width: 1024px) {
+}
+
+/* Desktops */
+@media (min-width: 1280px) {
 }
