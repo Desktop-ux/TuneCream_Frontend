@@ -17,3 +17,15 @@
     box-shadow: 0 0 5px black;
     border-radius: 0.5rem;
 }
+
+.active_mood{
+      padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgb(252, 252, 252);
+    outline: none;
+    border: none;
+    background: rgb(9, 136, 255);
+    box-shadow: 0 0 5px black;
+    border-radius: 0.5rem;
+}

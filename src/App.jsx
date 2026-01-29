@@ -63,7 +63,7 @@ const App = () => {
         <p>Music Therapy</p>
       </div>
       <div className="line"></div>
-      <Moods onMoodSelect={handleMoodSelect} />
+      <Moods selectedMood = {selectedMood} onMoodSelect={handleMoodSelect} />
       <div className="line"></div>
       <Player currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} currentSong={currentSong} playlist={songs} setCurrentSong={setCurrentSong} />
       <div className="line"></div>
