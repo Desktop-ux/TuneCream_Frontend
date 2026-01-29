@@ -57,4 +57,14 @@
 
 /* Desktops */
 @media (min-width: 1280px) {
+  .mood_container {
+    padding: 0;
+    gap: 2rem;
+    justify-content: flex-start;
+  }
+  .mood_btn {
+    padding: 0.5rem 1.5rem;
+    font-weight: 300;
+    font-size: 1rem;
+  }
 }

@@ -26,7 +26,7 @@ const Recommended = ({ songs, mood, onSongSelect, currentSong }) => {
 
       <div className="list">
         {songs.length === 0 ? (
-          <p>No Mood Selected 🎵</p>
+          <h2>No Mood Selected 🎵</h2>
         ) : (
           <div className="song_list">
             {songs.map((song, index) => (

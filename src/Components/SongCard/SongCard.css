@@ -22,8 +22,10 @@ h2.songtitle {
 /* Tablets */
 @media (min-width: 768px) {
   .songcard {
+    width: 50%;
     gap: 0.75rem;
     padding: 0.75rem;
+    margin: 0;
   }
 
   h2.songtitle {
@@ -33,6 +35,19 @@ h2.songtitle {
 
 /* Laptops */
 @media (min-width: 1024px) {
+  .songcard {
+   gap: 0.75rem;
+    padding: 0.75rem;
+  }
+
+  h2.songtitle {
+    font-size: 1rem;
+  }
+
+  .songcard.active_song {
+    background: linear-gradient(135deg, var(--bg), var(--bg));
+    color: var(--text);
+  }
 }
 
 /* Desktops */

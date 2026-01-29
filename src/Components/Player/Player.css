@@ -90,7 +90,7 @@ h3.artist {
     align-items: center;
     gap: 1rem;
   }
-  .player_container p{
+  .player_container p {
     font-size: 1.5rem;
   }
 
@@ -117,6 +117,44 @@ h3.artist {
 
 /* Laptops */
 @media (min-width: 1024px) {
+  .player_container {
+    width: 90%;
+    align-items: center;
+    gap: 1rem;
+    padding: 0;
+  }
+  .player_container p {
+    font-size: 1.5rem;
+  }
+
+  h2.title {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .timing p {
+    font-size: 1rem;
+  }
+
+  .play_buttons {
+    gap: 2rem;
+  }
+
+  .backward,
+  .forward {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .play {
+    width: 3.5rem;
+    height: 3.5em;
+  }
+
+  .playline {
+    width: 90%;
+    height: 3px;
+    margin: 0.5rem 0;
+  }
 }
 
 /* Desktops */
